@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOUR CAR SPA ON WHEELS - Premium Mobile Car Wash</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font family -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1a26; /* Deep Navy Background */
+            color: #f0f4f8; /* Off-White Text */
+        }
+        .hero-bg {
+            /* REVERTED: Vibrant Neon Car Spa Image */
+            background-image: url('http://googleusercontent.com/image_generation_content/0');
+            background-size: cover;
+            background-position: center 30%; 
+            min-height: 50vh;
+        }
+        /* Ensures the date/time picker uses dark colors for better visibility */
+        #booking-date, #booking-time {
+            color-scheme: dark; 
+        }
+
+        /* --- Scroll Animation Classes --- */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- CTA Pulse Animation --- */
+        @keyframes pulse-cyan {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(76, 175, 255, 0.4); 
+            }
+            50% {
+                box-shadow: 0 0 15px 5px rgba(76, 175, 255, 0.7);
+            }
+        }
+        .pulse-animate {
+            animation: pulse-cyan 3s infinite;
+        }
+
+        /* --- New Title Animation/Glow --- */
+        @keyframes title-neon-pulse {
+            0%, 100% {
+                /* Blue/Cyan Glow */
+                text-shadow: 0 0 5px #fff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+                color: #fff;
+            }
+            50% {
+                /* Magenta/Pink Glow */
+                text-shadow: 0 0 10px #fff, 0 0 25px #f0f, 0 0 50px #f0f, 0 0 80px #f0f;
+                color: #f0f0f0;
+            }
+        }
+        .title-unique {
+            font-weight: 900; /* Extra bold */
+            letter-spacing: 0.1em; /* Spacing for unique look */
+            animation: title-neon-pulse 3s ease-in-out infinite alternate;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="app" class="min-h-screen antialiased">
+
+        <!-- Header/Hero Section -->
+        <header class="hero-bg py-16 md:py-32 relative overflow-hidden shadow-2xl">
+            <!-- Overlay for better text readability on a dark background -->
+            <div class="absolute inset-0 bg-gray-900 bg-opacity-70 backdrop-blur-sm"></div>
+
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <!-- UNIQUE ANIMATED TITLE -->
+                <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold mb-3 leading-tight tracking-tight uppercase title-unique">
+                    YOUR CAR SPA ON WHEELS
+                </h1>
+                <p class="text-xl sm:text-2xl md:text-3xl font-medium text-cyan-300 tracking-wider">
+                    Showroom shine without leaving home
+                </p>
+            </div>
+        </header>
+
+        <!-- Pricing and Call to Action -->
+        <section class="bg-blue-900 py-6 md:py-8 shadow-inner">
+            <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8">
+                
+                <!-- Price Badge - LIME GREEN -->
+                <div class="bg-lime-400 text-gray-900 font-black text-3xl p-4 md:p-6 rounded-full shadow-2xl rotate-[-3deg] transform hover:rotate-0 transition duration-300 border-4 border-white">
+                    Just for <span class="text-4xl">₹399!</span>
+                </div>
+                
+                <!-- CTA Button - Now opens a modal -->
+                <button onclick="openModal()"
+                   class="bg-cyan-400 text-gray-900 font-bold text-lg md:text-xl py-3 px-8 rounded-full shadow-lg hover:bg-cyan-300 transition duration-300 ease-in-out uppercase tracking-wider transform hover:scale-105 pulse-animate"
+                   aria-label="Book your car spa by call or WhatsApp">
+                    Book Your Spa Now!
+                </button>
+            </div>
+        </section>
+
+        <!-- Services Section (Scroll Animation Applied) -->
+        <section class="py-12 md:py-20 bg-gray-900 animate-on-scroll">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-cyan-400">Our Premium Services</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    
+                    <!-- Service 1: Exterior Wash -->
+                    <div class="bg-gray-800 p-6 rounded-xl shadow-lg border-t-4 border-cyan-500 hover:shadow-xl transition duration-300">
+                        <div class="text-cyan-400 mb-4">
+                            <!-- Icon: Water Droplet/Spray -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto"><path d="M12 2v10.5h5V15H7v-2.5h5V2Z"/><path d="M15 16.5c1.5 1.5 2 2.5 2 4s-1 2.5-2 2.5c-1 0-1.5-.5-2-2.5s-2-4-2-4"/><path d="M12 16.5c-1.5 1.5-2 2.5-2 4s1 2.5 2 2.5c1 0 1.5-.5 2-2.5s2-4 2-4"/></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white text-center mb-2">Exterior Jet Spray Wash & Shine</h3>
+                        <p class="text-gray-400 text-center">High-pressure clean, foam application, and a final polish for a deep, protective shine.</p>
+                    </div>
+
+                    <!-- Service 2: Interior Clean -->
+                    <div class="bg-gray-800 p-6 rounded-xl shadow-lg border-t-4 border-cyan-500 hover:shadow-xl transition duration-300">
+                        <div class="text-cyan-400 mb-4">
+                            <!-- Icon: Vacuum Cleaner -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto"><path d="M5 21a1 1 0 0 1-1-1v-5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-6Z"/><path d="M5 16V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1h-12a1 1 0 0 1-1-1Z"/><path d="M17 5h-10"/><path d="M17 9h-10"/><path d="M17 13h-10"/></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white text-center mb-2">Interior Vacuum & Dashboard Polish</h3>
+                        <p class="text-gray-400 text-center">Thorough vacuuming, surface sanitization, and a non-greasy dashboard polish.</p>
+                    </div>
+
+                    <!-- Service 3: Wheels & Rims -->
+                    <div class="bg-gray-800 p-6 rounded-xl shadow-lg border-t-4 border-cyan-500 hover:shadow-xl transition duration-300">
+                        <div class="text-cyan-400 mb-4">
+                            <!-- Icon: Wheel/Tire -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto"><circle cx="12" cy="12" r="7"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M4.93 19.07l1.41-1.41"/><path d="M17.66 6.34l1.41-1.41"/></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white text-center mb-2">Tyre & Rim Cleaning</h3>
+                        <p class="text-gray-400 text-center">Specialized cleaning to remove brake dust and road grime, finished with tire shining gel.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Trust & Value Section (Scroll Animation Applied) -->
+        <section class="py-12 md:py-20 bg-gray-800 animate-on-scroll">
+            <div class="container mx-auto px-6">
+                <!-- Pink header color retained -->
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-pink-500">Why Choose Car Spa on Wheels?</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto text-center">
+                    
+                    <!-- Value 1: Convenience -->
+                    <div class="bg-gray-900 p-6 rounded-xl shadow-lg border-b-4 border-pink-500 hover:shadow-cyan-500/50 transition duration-300">
+                        <div class="text-pink-500 mb-4">
+                            <!-- Icon: Home Check (representing at-home service) -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/><path d="m9 16 2 2 4-4"/></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Unmatched Convenience</h3>
+                        <p class="text-gray-400">Save time and fuel. We bring all the equipment and expertise right to your doorstep.</p>
+                    </div>
+
+                    <!-- Value 2: Quality Guarantee -->
+                    <div class="bg-gray-900 p-6 rounded-xl shadow-lg border-b-4 border-pink-500 hover:shadow-cyan-500/50 transition duration-300">
+                        <div class="text-pink-500 mb-4">
+                            <!-- Icon: Star (representing quality/rating) -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Showroom-Quality Results</h3>
+                        <p class="text-gray-400">We use professional-grade equipment and specialized products for a flawless, long-lasting shine.</p>
+                    </div>
+
+                    <!-- Value 3: Eco-Friendly/Trained Professionals -->
+                    <div class="bg-gray-900 p-6 rounded-xl shadow-lg border-b-4 border-pink-500 hover:shadow-cyan-500/50 transition duration-300">
+                        <div class="text-pink-500 mb-4">
+                            <!-- Icon: User Check (representing trusted team) -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m22 10-2.24 2.24-4-4"/></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Expert & Verified Team</h3>
+                        <p class="text-gray-400">Our detailers are highly trained, verified professionals committed to handling your vehicle with care.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section (Scroll Animation Applied) -->
+        <section class="py-12 md:py-20 bg-gray-900 animate-on-scroll">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-cyan-400">Quick Questions & Answers</h2>
+                
+                <div class="space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden">
+                        <button class="w-full text-left p-5 flex justify-between items-center text-lg font-semibold text-white hover:bg-gray-700 transition duration-150" onclick="toggleFaq(1)">
+                            <span>How long does the service take?</span>
+                            <svg id="faq-icon-1" class="w-6 h-6 text-pink-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div id="faq-answer-1" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out text-gray-300 px-5 text-base">
+                            <p class="pb-4">The complete 'Car Spa on Wheels' service typically takes **45 to 60 minutes**. This duration ensures we deliver a showroom-quality finish for both the exterior and interior of your vehicle.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden">
+                        <button class="w-full text-left p-5 flex justify-between items-center text-lg font-semibold text-white hover:bg-gray-700 transition duration-150" onclick="toggleFaq(2)">
+                            <span>What kind of water or power supply do you need?</span>
+                            <svg id="faq-icon-2" class="w-6 h-6 text-pink-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div id="faq-answer-2" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out text-gray-300 px-5 text-base">
+                            <p class="pb-4">We are a fully self-sufficient mobile unit! We carry our own **water tank, high-pressure equipment, and power source** (inverter/generator). All we need is access to your vehicle at your desired location.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden">
+                        <button class="w-full text-left p-5 flex justify-between items-center text-lg font-semibold text-white hover:bg-gray-700 transition duration-150" onclick="toggleFaq(3)">
+                            <span>Do you service my area in Vadodara?</span>
+                            <svg id="faq-icon-3" class="w-6 h-6 text-pink-500 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div id="faq-answer-3" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out text-gray-300 px-5 text-base">
+                            <p class="pb-4">We cover all major residential and commercial areas in **Vadodara**. The best way to confirm is to simply enter your location in our booking modal, or send us a WhatsApp message!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section (Scroll Animation Applied) -->
+        <section class="py-12 md:py-20 bg-gray-800 animate-on-scroll">
+            <div class="container mx-auto px-6">
+                <!-- Pink header color retained -->
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-pink-500">What Our Clients Say</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto text-center">
+                    
+                    <!-- Testimonial 1 -->
+                    <div class="bg-gray-900 p-6 rounded-xl shadow-xl border-t-2 border-cyan-400">
+                        <p class="text-3xl text-pink-500 mb-3">⭐⭐⭐⭐⭐</p>
+                        <p class="italic text-gray-300 mb-4">"Absolutely stunning results! My car looks like it just rolled out of the dealership. The convenience is unbeatable."</p>
+                        <p class="font-semibold text-cyan-400">- Riya Sharma</p>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="bg-gray-900 p-6 rounded-xl shadow-xl border-t-2 border-cyan-400">
+                        <p class="text-3xl text-pink-500 mb-3">⭐⭐⭐⭐⭐</p>
+                        <p class="italic text-gray-300 mb-4">"Saved me an entire Saturday morning. Professional team and exceptional attention to detail on the interior vacuum."</p>
+                        <p class="font-semibold text-cyan-400">- Rohan Kumar</p>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="bg-gray-900 p-6 rounded-xl shadow-xl border-t-2 border-cyan-400">
+                        <p class="text-3xl text-pink-500 mb-3">⭐⭐⭐⭐⭐</p>
+                        <p class="italic text-gray-300 mb-4">"Worth every rupee! The rim cleaning service is top-notch. Highly recommend this mobile spa to everyone in the city."</p>
+                        <p class="font-semibold text-cyan-400">- Arjun Patel</p>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div class="bg-gray-900 p-6 rounded-xl shadow-xl border-t-2 border-cyan-400">
+                        <p class="text-3xl text-pink-500 mb-3">⭐⭐⭐⭐⭐</p>
+                        <p class="italic text-gray-300 mb-4">"The best mobile service I have used. The team arrived on time, was very efficient, and the shine is incredible!"</p>
+                        <p class="font-semibold text-cyan-400">- Priya Shah</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guarantee / Trust Section -->
+        <section class="py-10 bg-blue-800">
+            <div class="container mx-auto px-6 text-center">
+                <p class="text-lg text-blue-300 italic font-medium">
+                    "We bring the full car spa experience right to your doorstep, saving you time and delivering superior results."
+                </p>
+            </div>
+        </section>
+
+        <!-- Footer / Contact Section -->
+        <footer class="bg-gray-900 py-8">
+            <div class="container mx-auto px-6 text-center">
+                <h3 class="text-xl font-bold text-white mb-3">Ready for Showroom Shine?</h3>
+                
+                <!-- Contact Info -->
+                <div class="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-8 text-lg text-cyan-200">
+                    <p>
+                        <!-- Phone Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block mr-2"><path d="M22 16.92v3a2 2 0 0 1-2 2A20 20 0 0 1 2 4a2 2 0 0 1 2-2h3l3.5 3.5-1.5 1.5 2 2 1.5-1.5 3.5 3.5z"/></svg>
+                        Call/WhatsApp: 
+                        <a href="tel:7567676400" class="text-white font-semibold hover:text-cyan-300 transition duration-150">75676 76400</a>
+                    </p>
+                    <p class="text-gray-400">
+                        <!-- User Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block mr-2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        Kshitij Patel
+                    </p>
+                </div>
+                
+                <p class="mt-6 text-sm text-gray-600">
+                    © 2025 Your Car Spa On Wheels. All rights reserved.
+                </p>
+            </div>
+        </footer>
+
+        <!-- Booking Modal -->
+        <div id="booking-modal" class="fixed inset-0 bg-black bg-opacity-75 hidden flex items-center justify-center p-4 z-50 transition-opacity duration-300">
+            <div class="bg-gray-800 rounded-xl shadow-2xl p-6 w-full max-w-sm md:max-w-md transform transition-all duration-300 scale-95" id="modal-content">
+                <h3 class="text-2xl font-bold text-cyan-400 mb-4 text-center">Contact Kshitij Patel</h3>
+                <p class="text-gray-300 mb-6 text-center">Please provide your location and preferred booking slot (optional):</p>
+                
+                <!-- LOCATION, DATE, AND TIME INPUTS -->
+                <div class="mb-6 space-y-3">
+                    <input type="text" id="booking-location" placeholder="Your Location/Area in Vadodara (e.g., Alkapuri)" class="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 border border-gray-600 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500" />
+                    <input type="date" id="booking-date" class="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 border border-gray-600 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500" />
+                    <input type="time" id="booking-time" class="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 border border-gray-600 focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500" />
+                </div>
+                <!-- END LOCATION, DATE, AND TIME INPUTS -->
+                
+                <div class="space-y-4">
+                    <!-- WhatsApp Button with Pre-filled Message -->
+                    <a id="whatsapp-link" 
+                       href="#"
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       onclick="return handleWhatsappClick(event)"
+                       class="flex items-center justify-center w-full bg-green-500 text-white font-semibold py-3 px-4 rounded-lg hover:bg-green-600 transition duration-200 shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="mr-3"><path d="M12.01 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm4.332 8.529c.007.013.007.026 0 .04l-1.077 3.518c-.068.219-.074.225-.262.225-.136 0-.256-.051-.351-.133l-1.282-1.018c-.046-.036-.089-.047-.132-.047-.042 0-.083.008-.122.025l-.478.212c-.22.097-.247.164-.26.248-.007.039-.009.079-.009.119 0 .092.014.168.038.229.025.061.075.148.118.261l.519 1.144c.058.127.147.269.23.364.08.09.167.161.261.221.094.06.2.106.315.138.117.031.239.049.366.049.273 0 .54-.108.76-.327l.951-.951c.074-.074.129-.142.164-.207.034-.065.051-.128.051-.19-.002-.124-.055-.226-.157-.306l-.164-.132c-.044-.035-.078-.052-.104-.052-.026 0-.053.008-.083.024-.029.016-.062.046-.098.093-.035.047-.07.106-.104.175-.035.069-.065.15-.09.245-.025.096-.038.204-.038.324 0 .052.008.112.023.181.015.069.04.152.076.248.035.096.082.203.142.321l.365.73c.091.182.235.39.429.626.064.077.135.156.21.237.076.082.156.162.241.241l.73.365c.12.06.257.09.41.09.215 0 .42-.042.615-.126.195-.084.38-.205.556-.364l1.328-1.328c.159-.159.28-.344.364-.539.084-.195.126-.4.126-.615 0-.153-.03-.29-.09-.41l-.365-.73c-.074-.148-.158-.285-.251-.413-.092-.128-.201-.252-.326-.372l-1.332-1.332c-.12-.12-.257-.229-.413-.326-.156-.096-.323-.179-.502-.249-.179-.07-.375-.105-.588-.105-.12 0-.228.013-.324.038-.096.025-.177.055-.245.09zm-4.321 4.542l-.527-1.164c-.043-.095-.069-.199-.069-.308 0-.14.024-.265.074-.374.05-.109.13-.2.242-.276l1.246-.989c.046-.037.089-.047.132-.047s.083.008.122.025l.478.212c.22.097.247.164.26.248.007.039.009.079.009.119 0 .092-.014.168-.038.229-.025.061-.075.148-.118.261l-.519 1.144c-.058.127-.147.269-.23.364-.08.09-.167.161-.261.221-.094.06-.2.106-.315.138-.117.031-.239.049-.366.049-.273 0-.54-.108-.76-.327z"/></svg>
+                        WhatsApp Kshitij
+                    </a>
+
+                    <!-- Call Button -->
+                    <a href="tel:7567676400" onclick="closeModal()" 
+                       class="flex items-center justify-center w-full bg-blue-500 text-white font-semibold py-3 px-4 rounded-lg hover:bg-blue-600 transition duration-200 shadow-md">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-3"><path d="M22 16.92v3a2 2 0 0 1-2 2A20 20 0 0 1 2 4a2 2 0 0 1 2-2h3l3.5 3.5-1.5 1.5 2 2 1.5-1.5 3.5 3.5z"/></svg>
+                        Call Now
+                    </a>
+                </div>
+
+                <button onclick="closeModal()" class="w-full mt-6 text-gray-400 hover:text-white transition duration-200 font-medium">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Modal Functions and FAQ Accordion -->
+    <script>
+        const bookingModal = document.getElementById('booking-modal');
+        // The phone number is intentionally hardcoded here for the link functionality
+        const phoneNumber = '7567676400'; 
+
+        // --- Scroll Animation Setup (Intersection Observer) ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // Select all sections that should animate on scroll
+            const sections = document.querySelectorAll('.animate-on-scroll');
+            
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Add the 'animated' class to trigger the CSS transition
+                        entry.target.classList.add('animated');
+                        // Stop observing the element once it has animated
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                root: null, // relative to the viewport
+                rootMargin: '0px',
+                threshold: 0.1 // animation starts when 10% of the element is visible
+            });
+
+            // Start observing each section
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+        
+        // --- Modal Functions ---
+        
+        /**
+         * Generates the WhatsApp link with the customized message.
+         * @returns {string} The full WhatsApp URL.
+         */
+        function generateWhatsAppLink() {
+            const dateInput = document.getElementById('booking-date').value;
+            const timeInput = document.getElementById('booking-time').value;
+            // Removed 'Ahmedabad' from placeholder, now explicitly mentions Vadodara
+            const locationInput = document.getElementById('booking-location').value.trim(); 
+
+            let message = "Hello Kshitij Patel, I would like to book the 'YOUR CAR SPA ON WHEELS' service for ₹399.";
+
+            // 1. Add Location Info
+            if (locationInput) {
+                message += ` My service location is ${locationInput}.`;
+            } else {
+                // Inform the recipient if the location was skipped, so they know to ask
+                message += ` My service location in Vadodara is not yet specified (user did not fill location).`;
+            }
+
+            // 2. Add Date and Time Info
+            if (dateInput && timeInput) {
+                message += ` Preferred slot: ${dateInput} at ${timeInput}.`;
+            } else if (dateInput) {
+                message += ` Preferred date: ${dateInput}.`;
+            } else if (timeInput) {
+                message += ` Preferred time: ${timeInput}.`;
+            } 
+            
+            // 3. Final confirmation request
+            message += ` Please confirm availability.`;
+            
+            const encodedMessage = encodeURIComponent(message);
+            // Prefix with country code '91' for India
+            return `https://wa.me/91${phoneNumber}?text=${encodedMessage}`;
+        }
+
+        /**
+         * Handles the click on the WhatsApp button in the modal.
+         */
+        window.handleWhatsappClick = function(event) {
+            const link = document.getElementById('whatsapp-link');
+            if (link) {
+                // Set the href attribute just before navigation
+                link.href = generateWhatsAppLink();
+            }
+            return true;
+        }
+
+        /**
+         * Opens the booking modal.
+         */
+        window.openModal = function() {
+            if (bookingModal) {
+                bookingModal.classList.remove('hidden');
+                bookingModal.style.opacity = 0; 
+                setTimeout(() => bookingModal.style.opacity = 1, 10);
+            }
+        }
+
+        /**
+         * Closes the booking modal.
+         */
+        window.closeModal = function() {
+            if (bookingModal) {
+                bookingModal.style.opacity = 0;
+                setTimeout(() => bookingModal.classList.add('hidden'), 300);
+            }
+        }
+
+        // --- FAQ Accordion Function ---
+
+        /**
+         * Toggles the visibility of an FAQ answer.
+         * @param {number} id - The unique ID of the FAQ item.
+         */
+        window.toggleFaq = function(id) {
+            const answer = document.getElementById(`faq-answer-${id}`);
+            const icon = document.getElementById(`faq-icon-${id}`);
+            
+            // Check if the answer is currently hidden (max-h-0)
+            if (answer.classList.contains('max-h-0')) {
+                // Expand the answer
+                answer.classList.remove('max-h-0', 'py-0');
+                answer.classList.add('max-h-96', 'py-4');
+                icon.classList.add('rotate-180');
+            } else {
+                // Collapse the answer
+                answer.classList.remove('max-h-96', 'py-4');
+                answer.classList.add('max-h-0', 'py-0');
+                icon.classList.remove('rotate-180');
+            }
+        };
+    </script>
+</body>
+</html>
